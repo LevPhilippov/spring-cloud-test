@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <title>Add</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <h1>New item</h1>
+    <form th:action="@{/items/save}" method="post" th:object="${itemDto}">
+        <input type="text" th:field="*{title}" placeholder="Title">
+        <input type="number" th:field="*{price}" placeholder="Price">
+        <button type="submit">Submit</button>
+    </form>
+    <br>
+    <a th:href="@{/item/add}">Add item</a>
+</body>
+</html>
